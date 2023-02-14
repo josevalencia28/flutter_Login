@@ -1,6 +1,6 @@
 // import 'dart:html';
 
-// ignore_for_file: avoid_print, non_constant_identifier_names, unused_label
+// ignore_for_file: avoid_print, non_constant_identifier_names, unused_label, unused_field
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,12 +13,20 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
+  @override
+  void initState() {
+    emailController.text = "joseluisvalencia654@gmail.com";
+    passController.text = "12345678";
+    super.initState();
+  }
+
   final _formfield = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passController = TextEditingController();
   final CheckboxController = TextEditingController();
   bool passToggle = true;
-  bool? isChecked = false;
+  // ignore: prefer_final_fields
+  bool _isChecked = false;
 // bool checkToggle = true;
 
   //static String get input => null;
@@ -31,7 +39,7 @@ class _FormScreenState extends State<FormScreen> {
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w300,
           ),
         ),
         centerTitle: true,
@@ -107,20 +115,15 @@ class _FormScreenState extends State<FormScreen> {
                   const SizedBox(height: 20),
                   Row(
                     // crossAxisAlignment: WrapCrossAlignment.center,
-                    children: <Widget>[
+                    children: [
                       Checkbox(
-                          value: isChecked,
-                          onChanged: (value) {
-                            if (isChecked == false) {
-                              setState(() {
-                                isChecked = true;
-                              });
-                            } else if (isChecked == true) {
-                              setState(() {
-                                isChecked = false;
-                              });
-                            }
-                          }),
+                        value: _isChecked,
+                        onChanged: (value) {
+                          setState(() {
+                            _isChecked = value!;
+                          });
+                        },
+                      ),
                       const Text("Acepto"),
                       const InkWell(
                         // onTap: () {},
@@ -129,7 +132,7 @@ class _FormScreenState extends State<FormScreen> {
                           style: TextStyle(
                               color: Colors.blue,
                               fontSize: 15,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w900),
                         ),
                       ),
                     ],
@@ -137,12 +140,19 @@ class _FormScreenState extends State<FormScreen> {
                   const SizedBox(height: 25),
                   InkWell(
                     onTap: () {
-                      if (_formfield.currentState!.validate()) {
-                        print("success");
-                        emailController.clear();
-                        passController.clear();
-                        CheckboxController.clear();
+                      if (!_formfield.currentState!.validate()) {
+                        print("Campos vacios");
+                        return;
                       }
+                      if (!_isChecked) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text("Acepta Terminos y condiciones"),
+                        ));
+                        return;
+                      }
+                      emailController.clear();
+                      passController.clear();
+                      CheckboxController.clear();
                     },
                     child: Container(
                         height: 45,
