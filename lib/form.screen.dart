@@ -120,9 +120,6 @@ class _FormScreenState extends State<FormScreen> {
                                 isChecked = false;
                               });
                             }
-                            // setState(() {
-                            //   isChecked = value;
-                            // });
                           }),
                       const Text("Acepto"),
                       const InkWell(
