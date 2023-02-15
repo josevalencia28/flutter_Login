@@ -2,6 +2,8 @@
 
 // ignore_for_file: avoid_print, non_constant_identifier_names, unused_label, unused_field
 
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -192,7 +194,14 @@ class _FormScreenState extends State<FormScreen> {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  Center(
+                    child: Image.asset(
+                      "assets/image/google.png",
+                      height: 150,
+                      width: 40,
+                    ),
+                  ),
                 ],
               )),
         ),

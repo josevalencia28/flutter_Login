@@ -30,8 +30,18 @@ class MyAppCarrousel extends StatefulWidget {
 class _MyAppState extends State<MyAppCarrousel> {
   List<CarouselModel> carousel = [
     CarouselModel(
-        cuerpo: "Cuerpo ventanda 1", titulo: "Titulo ventana 1", imagen: "url"),
-    CarouselModel(cuerpo: "Cuerpo ventanda 2", titulo: "Titulo ventana 2"),
+      cuerpo: "Bienvenido",
+      imagen: "",
+      titulo: "",
+      github: "",
+    ),
+    CarouselModel(
+      cuerpo: "Elaborado por:",
+      titulo: "Jose Luis Valencia Ariza",
+      github: "Github:",
+      imagen: " https://github.com/josevalencia28/Flutter.git",
+    )
+
     // CarouselModel(
     //     cuerpo: "Cuerpo ventanda 3", titulo: "Titulo ventana 3", imagen: "url")
   ];
@@ -51,7 +61,7 @@ class _MyAppState extends State<MyAppCarrousel> {
           body: Column(
             children: [
               Expanded(
-                flex: 10,
+                flex: 7,
                 child: Container(
                   color: Colors.white,
                   child: PageView.builder(
@@ -64,9 +74,10 @@ class _MyAppState extends State<MyAppCarrousel> {
                             child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(carousel[index].imagen.toString()),
+                            Text(carousel[index].cuerpo.toString()),
                             Text(carousel[index].titulo.toString()),
-                            Text(carousel[index].cuerpo.toString())
+                            Text(carousel[index].github.toString()),
+                            Text(carousel[index].imagen.toString()),
                           ],
                         )),
                       );

@@ -1,6 +1,12 @@
 class CarouselModel {
-  String? imagen;
-  String? titulo;
   String? cuerpo;
-  CarouselModel({this.cuerpo, this.imagen, this.titulo});
+  String? titulo;
+  String? imagen;
+  String? github;
+  CarouselModel({
+    this.imagen,
+    this.cuerpo,
+    this.titulo,
+    this.github,
+  });
 }
