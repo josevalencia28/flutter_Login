@@ -41,7 +41,7 @@ class _FormScreenState extends State<FormScreen> {
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
-            fontWeight: FontWeight.w200,
+            fontWeight: FontWeight.w300,
           ),
         ),
         centerTitle: true,
