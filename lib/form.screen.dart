@@ -18,7 +18,7 @@ class _FormScreenState extends State<FormScreen> {
   @override
   void initState() {
     emailController.text = "joseluisvalencia654@gmail.com";
-    passController.text = "12345678";
+    passController.text = "Jose123456*";
     super.initState();
   }
 
