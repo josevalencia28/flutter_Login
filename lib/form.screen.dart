@@ -145,8 +145,10 @@ class _FormScreenState extends State<FormScreen> {
                         return;
                       }
                       if (!_isChecked) {
+                        // ignore: prefer_const_constructors
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text("Acepta Terminos y condiciones"),
+                          content:
+                              const Text("*Todos los Campos son Obligatorios"),
                         ));
                         return;
                       }

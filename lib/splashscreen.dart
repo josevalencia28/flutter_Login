@@ -31,10 +31,9 @@ class _MyAppState extends State<MyAppCarrousel> {
   List<CarouselModel> carousel = [
     CarouselModel(
         cuerpo: "Cuerpo ventanda 1", titulo: "Titulo ventana 1", imagen: "url"),
-    CarouselModel(
-        cuerpo: "Cuerpo ventanda 2", titulo: "Titulo ventana 2", imagen: "url"),
-    CarouselModel(
-        cuerpo: "Cuerpo ventanda 3", titulo: "Titulo ventana 3", imagen: "url")
+    CarouselModel(cuerpo: "Cuerpo ventanda 2", titulo: "Titulo ventana 2"),
+    // CarouselModel(
+    //     cuerpo: "Cuerpo ventanda 3", titulo: "Titulo ventana 3", imagen: "url")
   ];
   int contador = 0;
   @override
@@ -52,9 +51,9 @@ class _MyAppState extends State<MyAppCarrousel> {
           body: Column(
             children: [
               Expanded(
-                flex: 9,
+                flex: 10,
                 child: Container(
-                  color: Colors.blue,
+                  color: Colors.white,
                   child: PageView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: carousel.length,
@@ -78,7 +77,7 @@ class _MyAppState extends State<MyAppCarrousel> {
               Flexible(
                   flex: 1,
                   child: Container(
-                      color: Colors.blue,
+                      color: Colors.white,
                       child: Center(
                           child: ElevatedButton(
                               onPressed: () {
@@ -93,6 +92,7 @@ class _MyAppState extends State<MyAppCarrousel> {
                                   );
                                 }
                               },
+                              // ignore: prefer_const_constructors
                               child: Text("Siguiente")))))
             ],
           ),
