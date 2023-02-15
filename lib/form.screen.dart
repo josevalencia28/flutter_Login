@@ -41,7 +41,7 @@ class _FormScreenState extends State<FormScreen> {
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w200,
           ),
         ),
         centerTitle: true,
@@ -132,7 +132,7 @@ class _FormScreenState extends State<FormScreen> {
                         child: Text(
                           "Terminos y Condiciones",
                           style: TextStyle(
-                              color: Colors.blue,
+                              color: Colors.indigo,
                               fontSize: 15,
                               fontWeight: FontWeight.w900),
                         ),
@@ -161,7 +161,7 @@ class _FormScreenState extends State<FormScreen> {
                     child: Container(
                         height: 45,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Colors.indigo,
                           borderRadius: BorderRadius.circular(150),
                         ),
                         child: const Center(
@@ -170,7 +170,7 @@ class _FormScreenState extends State<FormScreen> {
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 25,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w300,
                             ),
                           ),
                         )),

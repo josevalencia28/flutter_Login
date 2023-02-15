@@ -41,9 +41,6 @@ class _MyAppState extends State<MyAppCarrousel> {
       github: "Github:",
       imagen: " https://github.com/josevalencia28/Flutter.git",
     )
-
-    // CarouselModel(
-    //     cuerpo: "Cuerpo ventanda 3", titulo: "Titulo ventana 3", imagen: "url")
   ];
   int contador = 0;
   @override
